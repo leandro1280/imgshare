@@ -1,0 +1,57 @@
+<!-- views/index.hbs -->
+
+<div class="card">
+    <div class="card-header bg-dark">
+        <h3 class="card-title text-white">
+            <i class="fa-solid fa-image"></i> Subir una publicacion
+        </h3>
+    </div>
+
+    <div class="card-body">
+        <form action="/images" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" name="image" class="custom-file-input" id="inputGroup"
+                            aria-describedby="inputGroupFileAddon" required>
+                        <label class="custom-file-label" for="inputGroup">Elegí tu archivo</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="title" class="form-control" placeholder="Título para la imagen" required>
+            </div>
+
+            <div class="form-group">
+                <textarea name="description" rows="2" class="form-control" placeholder="Descripción para la imagen"
+                    required></textarea>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-success">
+                    <i class="fa-solid fa-upload"></i> Carga tu imagen
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card mt-2">
+    <div class="card-header bg-dark text-white">
+        <h3> <i class="fa-fa.images"></i> RECIENTES </h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+
+            {{#each images}}
+            <div class="col-md-4">
+                <a href="/images/{{_Id}}">
+                    <img src="/public/upload/{{this.filename}}" alt="{{title}}" class="img-thumbnail">
+                </a>
+            </div>
+            {{/each}}
+
+        </div>
+    </div>
+</div>
