@@ -3,9 +3,12 @@
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
         <h2>{{image.title}}</h2>
-    </div>{{image.filename}}
+    </div>
     <div class="card-body">
-        <img src="/public/upload/" alt="{{image.title}}" class="img-fluid">
+        <a href="/images/{{image._id}}">
+            <!-- Aquí cambié `src` para que use `filename` en lugar de `_id` -->
+            <img src="/public/upload/{{image.filename}}" alt="{{image.title}}" class="img-fluid">
+        </a>
         <p>{{image.description}}</p>
     </div>
 </div>
