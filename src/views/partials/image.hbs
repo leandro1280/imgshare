@@ -5,9 +5,9 @@
         <h2>{{image.title}}</h2>
     </div>
     <div class="card-body">
-        <a href="/images/{{image._id}}">
-            <!-- Aquí cambié `src` para que use `filename` en lugar de `_id` -->
-            <img src="/public/upload/{{image.filename}}" alt="{{image.title}}" class="img-fluid">
+        <a href="/images/{{this.filename}}">
+          
+            <img src="/public/upload/{{this.filename}}" alt="{{image.title}}" class="img-fluid">
         </a>
         <p>{{image.description}}</p>
     </div>
