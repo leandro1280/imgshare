@@ -33,7 +33,8 @@ module.exports = app => {
     routes(app);
 
     // Archivos estáticos
-    app.use('/public', express.static(path.join(__dirname, '../public')));
+    app.use ("/", express.static(path.resolve(__dirname, "../public")));
+
 
 
 

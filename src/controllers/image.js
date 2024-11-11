@@ -15,6 +15,18 @@ ctrl.index = async (req, res) => {
     }
 };
 
+ctrl.getOne = async (req, res) => {
+    try {
+        const { imageId } = req.params;
+        let image = await Image.findOne({ filename: imageId }).sort({ timestamp: -1 }).lean();
+        console.log(image);
+        
+        res.render('oneImg', { image: image });
+    } catch (error) {
+        console.error('Error al obtener imágenes:', error);
+        res.status(500).send('Error al obtener imágenes');
+    }
+};
 // Crear una nueva imagen y redirigir al main después de guardarla
 ctrl.create = async (req, res) => {
     try {

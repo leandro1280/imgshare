@@ -5,7 +5,7 @@ const router = express.Router();
 
 module.exports = app => {
     router.get('/', home.index);
-    router.get('/images/:image_id', image.index);
+    router.get('/images/:imageId', image.getOne);
     router.post('/images', image.create);
     router.post('/images/:image_id/like', image.like);
     router.post('/images/:image_id/comments', image.comments);
