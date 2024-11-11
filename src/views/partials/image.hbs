@@ -2,15 +2,21 @@
 
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
-        <h2>{{image.title}}</h2>
+        <h2>{{this.title}}</h2>
     </div>
     <div class="card-body">
+
         <button class="btn btn-danger" id ="btn-delete" data-id = "{{image.uniqueId}}">
         <a href="/images/{{this.filename}}">
         <i class= "fa-fa-times"> </i> delete
           
             <img src="/public/upload/{{this.filename}}" alt="{{image.title}}" class="img-fluid">
+=======
+        <a href="/images/{{filename}}">
+            <!-- Aquí cambié `src` para que use `filename` en lugar de `_id` -->
+            <img src="upload/{{this.filename}}" alt="{{title}}" class="img-thumbnail">
+
         </a>
-        <p>{{image.description}}</p>
+        <p>{{this.description}}</p>
     </div>
 </div>

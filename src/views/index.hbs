@@ -43,13 +43,15 @@
     </div>
     <div class="card-body">
         <div class="row">
-   {{#each images}}
+
+            {{#each images}}
             <div class="col-md-4">
                 <a href="image/{{this.filename}}">
                     <img src="upload/{{this.filename}}" alt="{{title}}" class="img-thumbnail">
                 </a>
             </div>
             {{/each}}
+
         </div>
     </div>
 </div>
